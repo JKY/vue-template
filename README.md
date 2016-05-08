@@ -1,0 +1,13 @@
+目录结构:
+- app.js 主文件
+- config.js 配置文件
+- package.json 依赖
+- lib node 端库文件
+  - auth.js
+  - db.js
+  - proxy.js
+  - util.js 
+- api api 文件夹
+- com 公用逻辑
+- build 构建脚本
+- views 前端脚本及资源
