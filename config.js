@@ -1,7 +1,13 @@
+var path = require('path');
+
 module.exports.settings =  {
-	appname:'appname',
+	appname:'foo',
 	dev:true,
 	port: 5013,
+	build: {
+	    output: path.resolve(__dirname, 'views/dist'),
+	    productionSourceMap: true
+	},
 	wx: {
 		'appid':'wx50d746e9d0f0af1e'
 	},
