@@ -32,3 +32,61 @@
 build
 ===
 	npm run build
+
+
+
+
+LINE (线路)
+====
+** compoments **
+====
+* line-list (线路列表)
+* line-status (线路)
+    - line-status-header 
+	- line-status-comment-list (评论列表）
+	- line-status-comment (单条评论)
+* line-filter (过滤)
+
+** page **
+	* page-lines 
+	* page-pub-line-stat
+	* page-line-detail
+
+
+
+CONVERSATION (对话)
+============
+** compoments **
+* chat-text-item
+* recent-chat-list-item-group
+* recent-chat-list-item
+
+page
+	* chat
+	* recent-chats
+
+FAV (收藏)
+===========
+** compoment **
+	* fav-item
+
+
+
+FOLLOW
+======
+	* people
+		** component **
+	    	* fl-people-list
+			* fl-people-item
+		** page **
+			* fl-fans (关注我的人)
+			* fl-mine (我的关注)
+	* line
+		** component **
+			* fl-line-item
+			* fl-line-list
+		** page **
+			* fl-line-add
+			* fl-lines 
+
+	
