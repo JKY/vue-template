@@ -2,7 +2,7 @@ var path = require('path');
 var config = require('../config').settings;
 var utils = require('./utils');
 var webpack = require('webpack');
-var projectRoot = path.resolve(__dirname, '../views');
+var src = path.resolve(__dirname, '../views/src');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -16,8 +16,8 @@ var opt = {
         filename: config.appname + '.js'
     },
     resolve: {
-        extensions: ['', '.js', '.vue'],
-        fallback: [path.join(__dirname, '../node_modules')]
+      extensions: ['', '.js', '.vue'],
+      fallback: [path.join(__dirname, '../node_modules')]
     },
     resolveLoader: {
         fallback: [path.join(__dirname, '../node_modules')]
@@ -31,7 +31,7 @@ var opt = {
             {
               test: /\.js$/,
               loader: 'babel',
-              include: projectRoot,
+              include: src,
               exclude: /node_modules/
             },
             {
@@ -49,16 +49,19 @@ var opt = {
             {
               test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
               loader: 'url'
-            },
-
+            }
         ]
     },
     plugins: [
+        new webpack.ProvidePlugin({
+          'window.$' : 'zepto',
+          'zepto' : 'Zepto'
+        }),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.NoErrorsPlugin(),
         new HtmlWebpackPlugin({
           filename: 'index.html',
-          template: 'views/src/index.html',
+          template: 'views/index.html',
           inject: true,
           minify: {
               removeComments: true,
